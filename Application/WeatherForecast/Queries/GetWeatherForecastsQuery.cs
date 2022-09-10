@@ -1,4 +1,6 @@
-﻿using MediatR;
+﻿using Application.Common.Interfaces;
+using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace Application.WeatherForecast.Queries
 {
@@ -9,21 +11,37 @@ namespace Application.WeatherForecast.Queries
         public int PageSize { get; init; } = 10;
     }
 
-    public class GetWeatherForecastsQueryHandler : RequestHandler<GetWeatherForecastsQuery, IEnumerable<WeatherForecastDto>>
+    public class GetWeatherForecastsQueryHandler : IRequestHandler<GetWeatherForecastsQuery, IEnumerable<WeatherForecastDto>>
     {
-        private static readonly string[] Summaries = new[] {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-            };
+        private readonly IApplicationDbContext _context;
 
-        protected override IEnumerable<WeatherForecastDto> Handle(GetWeatherForecastsQuery request)
+        public GetWeatherForecastsQueryHandler(IApplicationDbContext context)
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecastDto
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+            this._context = context;
         }
+
+        public async Task<IEnumerable<WeatherForecastDto>> Handle(GetWeatherForecastsQuery request, CancellationToken cancellationToken)
+        {
+            IEnumerable<WeatherForecastDto> data = await _context.WeatherForecasts.Select(x => new WeatherForecastDto
+            {
+                Date = x.Date,
+                Summary = x.Summary,
+                TemperatureC = x.TemperatureC
+            }).ToListAsync();
+
+            return data;
+
+            //return Enumerable.Range(1, 5).Select(index => new WeatherForecastDto
+            //{
+            //    Date = DateTime.Now.AddDays(index),
+            //    TemperatureC = Random.Shared.Next(-20, 55),
+            //    Summary = Summaries[Random.Shared.Next(Summaries.Length)]
+            //})
+            //.ToArray();
+        }
+
+        //private static readonly string[] Summaries = new[] {
+        //"Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+        //    };
     }
 }

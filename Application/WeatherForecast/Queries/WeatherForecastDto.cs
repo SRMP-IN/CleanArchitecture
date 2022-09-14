@@ -1,6 +1,6 @@
 ﻿namespace Application.WeatherForecast.Queries
 {
-    public class WeatherForecastDto
+    public record WeatherForecastDto
     {
         public DateTime Date { get; set; }
 

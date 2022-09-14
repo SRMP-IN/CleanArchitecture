@@ -4,13 +4,8 @@ using MediatR;
 
 namespace Application.WeatherForecast.Commands
 {
-    public record class CreateWeatherForecastsCommand : IRequest<Queries.WeatherForecastDto>
-    {
-        public DateTime Date { get; set; }
-
-        public int TemperatureC { get; set; }
-
-        public string? Summary { get; set; }
+    public record class CreateWeatherForecastsCommand : Queries.WeatherForecastDto, IRequest<Queries.WeatherForecastDto>
+    { 
     }
 
     public class CreateWeatherForecastsCommandHandler : IRequestHandler<CreateWeatherForecastsCommand, Queries.WeatherForecastDto>

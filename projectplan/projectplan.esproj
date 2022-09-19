@@ -20,4 +20,19 @@
   <ItemGroup>
     <None Remove=".vscode\**" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\components\form\" />
+    <Folder Include="src\components\ui\" />
+    <Folder Include="src\context\" />
+    <Folder Include="src\data\" />
+    <Folder Include="src\features\authentication\" />
+    <Folder Include="src\features\settings\" />
+    <Folder Include="src\features\projects\" />
+    <Folder Include="src\hooks\" />
+    <Folder Include="src\layouts\" />
+    <Folder Include="src\lib\" />
+    <Folder Include="src\utilities\" />
+    <Folder Include="src\services\" />
+    <Folder Include="src\pages\" />
+  </ItemGroup>
 </Project>

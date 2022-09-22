@@ -1,6 +1,24 @@
-import React from 'react'
+import React from 'react' 
+ 
+
 
 function Navbar() {
+    //console.log('Navbar start')
+
+    const menuToggle=()=> {
+        const body = document.querySelector('body');
+        body.classList.toggle('sidebar-icon-only');       
+        if (body.classList.contains('sidebar-icon-only')) {           
+            document.querySelectorAll('.sidebar .nav-item').forEach((el) => {
+                el.addEventListener('mouseover', function () {
+                    el.classList.add('hover-open');
+                });
+                el.addEventListener('mouseout', function () {
+                    el.classList.remove('hover-open');
+                });
+            });
+        }
+    }
   return (
     <>
        <nav className="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
@@ -8,7 +26,7 @@ function Navbar() {
                         <div className="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
                             <a className="navbar-brand brand-logo" href="index.html"><img src="images/logo.svg" alt="logo" /></a>
                             <a className="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo-mini.svg" alt="logo" /></a>
-                            <button className="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                            <button className="navbar-toggler navbar-toggler align-self-center" type="button" onClick={menuToggle} >
                                 <span className="mdi mdi-sort-variant"></span>
                             </button>
                         </div>
@@ -140,7 +158,7 @@ function Navbar() {
                                 </div>
                             </li>
                         </ul>
-                        <button className="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+                        <button className="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas"  onClick={()=>document.querySelector('.sidebar-offcanvas').classList.toggle('active')} >
                             <span className="mdi mdi-menu"></span>
                         </button>
                     </div>

@@ -1,17 +1,18 @@
- 
-import React, {useEffect} from 'react'
+
+import React from 'react'
+import {NavLink } from 'react-router-dom'
 
 function Sidebar() {
     //console.log('Sidebar start')
     return (
         <>
-        <nav className="sidebar sidebar-offcanvas" id="sidebar" >
-           <ul className="nav">
+            <nav className="sidebar sidebar-offcanvas" id="sidebar" >
+                <ul className="nav">
                     <li className="nav-item"     >
-                        <a className="nav-link" href="index.html">
+                        <NavLink  className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}   to="/Dashboard">
                             <i className="mdi mdi-home menu-icon"></i>
                             <span className="menu-title">Dashboard</span>
-                        </a>
+                        </NavLink>
                     </li>
                     <li className="nav-item">
 
@@ -22,7 +23,7 @@ function Sidebar() {
                         </a>
                         <div className="collapse" id="ui-basic">
                             <ul className="nav flex-column sub-menu">
-                              
+
                                 <li className="nav-item">
                                     <a className="nav-link" href="pages/tables/basic-table.html">
                                         <i className="mdi mdi-grid-large menu-icon"></i>
@@ -30,8 +31,8 @@ function Sidebar() {
                                     </a>
                                 </li>
                                 <li className="nav-item">
-                                     <a className="nav-link" href="pages/ui-features/buttons.html">Buttons</a>
-                                     </li>
+                                    <a className="nav-link" href="pages/ui-features/buttons.html">Buttons</a>
+                                </li>
                                 <li className="nav-item"> <a className="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
                             </ul>
                         </div>

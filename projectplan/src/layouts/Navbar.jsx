@@ -1,5 +1,5 @@
 import React from 'react' 
- 
+import { Link } from 'react-router-dom';
 
 
 function Navbar() {
@@ -24,12 +24,12 @@ function Navbar() {
        <nav className="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
                     <div className="navbar-brand-wrapper d-flex justify-content-center">
                         <div className="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
-                            <a className="navbar-brand brand-logo" href="index.html"><img src="images/logo.svg" alt="logo" /></a>
-                            <a className="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo-mini.svg" alt="logo" /></a>
+                            <Link className="navbar-brand brand-logo"  to={'/Dashboard'}><img src="images/logo.svg" alt="logo" /></Link>
+                            <Link className="navbar-brand brand-logo-mini" to={'/Dashboard'}><img src="images/logo-mini.svg" alt="logo" /></Link>
                             <button className="navbar-toggler navbar-toggler align-self-center" type="button" onClick={menuToggle} >
                                 <span className="mdi mdi-sort-variant"></span>
                             </button>
-                        </div>
+                        </div> 
                     </div>
                     <div className="navbar-menu-wrapper d-flex align-items-center justify-content-end">
                         <ul className="navbar-nav mr-lg-4 w-100">

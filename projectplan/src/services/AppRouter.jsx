@@ -1,14 +1,17 @@
-import React from 'react'
+import React, { lazy } from 'react'
 import { Routes, Route } from 'react-router-dom';
-import Dashboard from '../pages/Dashboard';
-import Login from '../pages/Login';
+
+
+
+const Dashboard = lazy(() => import('../pages/Dashboard'));
+const Login = lazy(() => import('../pages/Login'));
 
 function AppRouter() {
     return (
 
         <Routes>
-            <Route exact index path="/dashboard" element={<Dashboard />} ></Route>
-            <Route exact  path="/login" element={<Login />} ></Route>
+            <Route exact path="/dashboard" element={<Dashboard />} ></Route>
+            <Route exact path="/login" element={<Login />} ></Route>
             <Route index element={<Dashboard />} ></Route>
         </Routes>
     )

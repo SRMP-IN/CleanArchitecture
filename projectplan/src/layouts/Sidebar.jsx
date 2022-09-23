@@ -1,15 +1,23 @@
 
 import React from 'react'
-import {NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
-function Sidebar() {
+
+
+function Sidebar(props) {
     //console.log('Sidebar start')
+    const { locationPathName } = props;
+
+    function isPathActive(path) {
+        return locationPathName.toLowerCase().startsWith(path.toLowerCase());
+    }
+
     return (
         <>
             <nav className="sidebar sidebar-offcanvas" id="sidebar" >
                 <ul className="nav">
-                    <li className="nav-item"     >
-                        <NavLink  className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}   to="/Dashboard">
+                    <li className={isPathActive("/Dashboard") ? "nav-item active" : "nav-item"}>
+                        <NavLink className="nav-link" to="/Dashboard">
                             <i className="mdi mdi-home menu-icon"></i>
                             <span className="menu-title">Dashboard</span>
                         </NavLink>

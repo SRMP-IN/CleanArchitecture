@@ -23,6 +23,7 @@ function MainLayout() {
         }
     }, [])
 
+
     return (
         isFullPageLayout ?
             <div>
@@ -31,7 +32,7 @@ function MainLayout() {
             <div className="container-scroller">
                 <Navbar></Navbar>
                 <div className="container-fluid page-body-wrapper">
-                    <Sidebar></Sidebar>
+                    <Sidebar locationPathName={location.pathname}></Sidebar>
                     <div className="main-panel">
                         <div className="content-wrapper">
                             <PageContainer></PageContainer>

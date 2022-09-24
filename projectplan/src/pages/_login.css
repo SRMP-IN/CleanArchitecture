@@ -1,0 +1,160 @@
+.auth .login-half-bg {
+    /*background: url("../images/auth/login-bg.jpg");*/
+    background-size: cover;
+}
+
+.auth .register-half-bg {
+    /*  background: url("../images/auth/register-bg.jpg");*/
+    background-size: cover;
+}
+
+.auth.lock-full-bg {
+    /*  background: url("../images/auth/lockscreen-bg.jpg");*/
+    background-size: cover;
+}
+
+.auth .lock-profile-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+}
+
+.auth .auth-form-light {
+    background: #ffffff;
+}
+
+    .auth .auth-form-light select {
+        color: #c9c8c8;
+    }
+
+    .auth .auth-form-light .input-group .form-control:focus,
+    .auth .auth-form-light .input-group .dataTables_wrapper select:focus,
+    .dataTables_wrapper .auth .auth-form-light .input-group select:focus,
+    .auth .auth-form-light .input-group .form-control:active,
+    .auth .auth-form-light .input-group .dataTables_wrapper select:active,
+    .dataTables_wrapper .auth .auth-form-light .input-group select:active {
+        border-color: #d7d7d7;
+    }
+
+.auth .auth-form-transparent {
+    background: transparent;
+}
+
+    .auth .auth-form-transparent .form-control,
+    .auth .auth-form-transparent .dataTables_wrapper select,
+    .dataTables_wrapper .auth .auth-form-transparent select,
+    .auth .auth-form-transparent .input-group-text {
+        border-color: #686868;
+    }
+
+        .auth .auth-form-transparent .form-control:focus,
+        .auth .auth-form-transparent .dataTables_wrapper select:focus,
+        .dataTables_wrapper .auth .auth-form-transparent select:focus,
+        .auth .auth-form-transparent .form-control:active,
+        .auth .auth-form-transparent .dataTables_wrapper select:active,
+        .dataTables_wrapper .auth .auth-form-transparent select:active,
+        .auth .auth-form-transparent .input-group-text:focus,
+        .auth .auth-form-transparent .input-group-text:active {
+            border-color: #686868;
+        }
+
+    .auth .auth-form-transparent select {
+        outline-color: #686868;
+    }
+
+.auth.auth-img-bg {
+    padding: 0;
+}
+
+@media (min-width: 768px) {
+    .auth.auth-img-bg .auth-form-transparent {
+        width: 55%;
+        margin: auto;
+    }
+}
+
+.auth .brand-logo {
+    margin-bottom: 2rem;
+}
+
+    .auth .brand-logo img {
+        width: 150px;
+    }
+
+.auth form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+    .auth form .form-group label {
+        font-size: .8125rem;
+    }
+
+    .auth form .form-group .form-control,
+    .auth form .form-group .dataTables_wrapper select,
+    .dataTables_wrapper .auth form .form-group select {
+        background: transparent;
+        border-radius: 0;
+        font-size: .9375rem;
+    }
+
+.auth form .auth-form-btn {
+    height: 50px;
+    line-height: 1.5;
+    width: 100%;
+}
+
+.auth form .auth-link {
+    font-size: 0.875rem;
+}
+
+    .auth form .auth-link:hover {
+        color: initial;
+    }
+
+.page-body-wrapper {
+    min-height: calc(100vh - 60px);
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 60px;
+}
+
+    .page-body-wrapper.full-page-wrapper {
+        width: 100%;
+        min-height: 100vh;
+        padding-top: 0;
+    }
+
+.main-panel {
+    transition: width 0.25s ease, margin 0.25s ease;
+    width: calc(100% - 257px);
+    min-height: calc(100vh - 60px);
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+
+@media (max-width: 991px) {
+    .main-panel {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+.content-wrapper {
+    background: #d7d7d7;
+    padding: 2.1rem 1.04rem;
+    width: 100%;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+}
+
+@media (max-width: 767px) {
+    .content-wrapper {
+        padding: 1.5rem 1.5rem;
+    }
+}

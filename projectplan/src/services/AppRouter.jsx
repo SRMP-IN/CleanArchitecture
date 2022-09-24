@@ -1,20 +1,12 @@
-import React, { lazy } from 'react'
-import { Routes, Route } from 'react-router-dom';
+import React, { lazy } from 'react';
+import Error404 from '../pages/Error404';
+import Dashboard from '../pages/Dashboard';
+import Login from '../pages/Login';
 
-
-
-const Dashboard = lazy(() => import('../pages/Dashboard'));
-const Login = lazy(() => import('../pages/Login'));
-
-function AppRouter() {
-    return (
-
-        <Routes>
-            <Route exact path="/dashboard" element={<Dashboard />} ></Route>
-            <Route exact path="/login" element={<Login />} ></Route>
-            <Route index element={<Dashboard />} ></Route>
-        </Routes>
-    )
-}
-
+const AppRouter = [
+    { index: true, element: <Dashboard />, path: "/" },
+    { element: <Dashboard />, path: "/Dashboard" },
+    { element: <Login />, path: "/login" },
+    { element: <Error404 />, path: "/error404" }
+];
 export default AppRouter

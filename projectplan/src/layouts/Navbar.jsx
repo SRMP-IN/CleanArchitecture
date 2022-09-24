@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 
 function Navbar() {
-    console.log('Navbar start')
+    //console.log('Navbar start')
 
     const menuToggle = () => {
         const body = document.querySelector('body');

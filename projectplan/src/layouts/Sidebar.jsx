@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 function Sidebar() {
-    console.log('Sidebar start')
+    //console.log('Sidebar start')
     // const { locationPathName } = props;
 
     // function isPathActive(path) {

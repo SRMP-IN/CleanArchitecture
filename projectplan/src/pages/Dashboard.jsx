@@ -1,7 +1,12 @@
 import React from 'react'
+import { useAuthContext } from '../context/AuthContext'
 
 function Dashboard() {
     console.log("Dashboard")
+  const [currentUser,loading] = useAuthContext();
+  console.log("Dashboard -currentUser",currentUser)
+  console.log("Dashboard -currentUser",useAuthContext())
+     
     return (
 
         <div className="row">

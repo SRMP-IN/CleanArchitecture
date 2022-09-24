@@ -3,7 +3,7 @@ import AppRouter from '../services/AppRouter'
 
 function PageContainer(props) {
     console.log("Page Container  ")
-    console.log(JSON.stringify(props.children.props))
+   // console.log(JSON.stringify(props.children.props))
     return (
         <> {props.children} </>
     )

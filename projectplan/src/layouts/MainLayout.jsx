@@ -4,22 +4,50 @@ import Sidebar from './Sidebar';
 import PageContainer from './PageContainer';
 import Footer from './Footer';
 
-function MainLayout(props) {
+import { Routes, Route } from "react-router-dom";
+import AppRouter, { AppRouterPageLayout } from "../services/AppRouter";
+import { useAuthContext } from '../context/AuthContext';
+import Login from '../pages/Login';
+
+
+function MainLayout() {
     console.log("Main Layout Start")
-    return (
-        <>
-            <Navbar></Navbar>
-            <div className="container-fluid page-body-wrapper">
-                <Sidebar></Sidebar>
-                <div className="main-panel">
-                    <div className="content-wrapper">
-                        <PageContainer children={props.children}></PageContainer>
+    const [currentUser,pageLayout] = useAuthContext();
+    console.log("Main Layout -currentUser", currentUser)
+
+    if (pageLayout)
+        return ( 
+        <PageContainer>
+            <Routes>
+                {AppRouterPageLayout.map((route, index) => {
+                    const { element, ...rest } = route;
+                    return <Route key={index} {...rest} element={element} />;
+                })}
+            </Routes>
+        </PageContainer>)
+    else
+        return (
+            < >
+
+                <Navbar></Navbar>
+                <div className="container-fluid page-body-wrapper">
+                    <Sidebar></Sidebar>
+                    <div className="main-panel">
+                        <div className="content-wrapper">
+                            <PageContainer>
+                                <Routes>
+                                    {AppRouter.map((route, index) => {
+                                        const { element, ...rest } = route;
+                                        return <Route key={index} {...rest} element={element} />;
+                                    })}
+                                </Routes>
+                            </PageContainer>
+                        </div>
+                        <Footer></Footer>
                     </div>
-                    <Footer></Footer>
                 </div>
-            </div>
-        </>
-    )
+            </>
+        )
 }
 
 export default MainLayout

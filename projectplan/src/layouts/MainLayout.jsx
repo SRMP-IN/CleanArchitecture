@@ -12,8 +12,9 @@ import Login from '../pages/Login';
 
 function MainLayout() {
     console.log("Main Layout Start")
-    const [currentUser,pageLayout] = useAuthContext();
+    const {currentUser,pageLayout}= useAuthContext();
     console.log("Main Layout -currentUser", currentUser)
+    console.log("Main Layout -pageLayout", pageLayout)
 
     if (pageLayout)
         return ( 

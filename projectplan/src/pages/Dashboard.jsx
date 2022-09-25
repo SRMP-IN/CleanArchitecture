@@ -3,7 +3,7 @@ import { useAuthContext } from '../context/AuthContext'
 
 function Dashboard() {
     console.log("Dashboard")
-  const [currentUser,loading] = useAuthContext();
+  const {currentUser,loading} = useAuthContext();
   console.log("Dashboard -currentUser",currentUser)
   console.log("Dashboard -currentUser",useAuthContext())
      

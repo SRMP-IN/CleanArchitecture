@@ -1,5 +1,6 @@
 import React from 'react'
 import { useAuthContext } from '../context/AuthContext'
+import PushAlert from '../layouts/PushAlert';
 
 function Dashboard() {
     console.log("Dashboard")
@@ -10,6 +11,7 @@ function Dashboard() {
     return (
 
         <div className="row">
+            <PushAlert></PushAlert>
             <div className="col-lg-12 grid-margin stretch-card">
                 <div className="card">
                     <div className="card-body">

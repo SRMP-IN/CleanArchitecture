@@ -26,6 +26,12 @@ function Sidebar() {
                         </NavLink>
                     </li>
                     <li className="nav-item">
+                        <NavLink className="nav-link" to="/PushAlert">
+                            <i className="mdi mdi-home menu-icon"></i>
+                            <span className="menu-title">PushAlert</span>
+                        </NavLink>
+                    </li>
+                    <li className="nav-item">
                         <NavLink className="nav-link" to="/login">
                             <i className="mdi mdi-home menu-icon"></i>
                             <span className="menu-title">login</span>

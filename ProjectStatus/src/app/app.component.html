@@ -1,13 +1,11 @@
-
-<button type="button" class="btn btn-primary">Primary</button>
-<button type="button" class="btn btn-secondary">Secondary</button>
-<button type="button" class="btn btn-success">Success</button>
-<button type="button" class="btn btn-danger">Danger</button>
-<button type="button" class="btn btn-warning">Warning</button>
-<button type="button" class="btn btn-info">Info</button>
-<button type="button" class="btn btn-light">Light</button>
-<button type="button" class="btn btn-dark">Dark</button>
-
-<button type="button" class="btn btn-link">Link</button>
-
-<router-outlet></router-outlet>
+<div class="container-scroller">
+  <app-navbar class="ng-component"></app-navbar>
+  <div class="container-fluid page-body-wrapper">
+    <app-sidebar class="ng-component"></app-sidebar>
+    <div class="main-panel">
+      <app-home class="ng-component"></app-home>
+      <router-outlet></router-outlet>
+      <app-footer class="ng-component"></app-footer>
+    </div>
+  </div>
+</div>

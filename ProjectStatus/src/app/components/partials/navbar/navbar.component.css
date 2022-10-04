@@ -1,0 +1,10 @@
+.navbar .navbar-menu-wrapper .navbar-nav {
+    flex-direction: row !important;
+}
+
+
+.navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown .dropdown-item .item-thumbnail .item-icon {
+    justify-content: center !important;
+}
+ 
+    

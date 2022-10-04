@@ -1,11 +1,25 @@
 <div class="container-scroller">
-  <app-navbar class="ng-component"></app-navbar>
-  <div class="container-fluid page-body-wrapper">
-    <app-sidebar class="ng-component"></app-sidebar>
-    <div class="main-panel">
-      <app-home class="ng-component"></app-home>
-      <router-outlet></router-outlet>
-      <app-footer class="ng-component"></app-footer>
+
+
+  <ng-template [ngIf]="fullPage">
+    <router-outlet class="ng-component"></router-outlet>
+  </ng-template>
+
+
+  <ng-template [ngIf]="!fullPage">
+    <app-navbar class="ng-component"></app-navbar>
+    <div class="container-fluid page-body-wrapper">
+      <app-sidebar class="ng-component"></app-sidebar>
+      <div class="main-panel">
+        <app-home class="ng-component"></app-home>
+        <router-outlet></router-outlet>
+        <app-footer class="ng-component"></app-footer>
+      </div>
     </div>
-  </div>
+  </ng-template>
+
+
+
+
+
 </div>

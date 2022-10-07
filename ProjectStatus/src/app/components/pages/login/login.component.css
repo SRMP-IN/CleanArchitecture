@@ -22,10 +22,7 @@
 .auth form .form-group label {
     font-size: 0.8125rem;
 }
+ 
 
-.auth form .form-group .form-control,
-.auth form .form-group .dataTables_wrapper select,
-.dataTables_wrapper .auth form .form-group select {
-    background: transparent;
-    border-radius: 0;
-}
+  
+ 

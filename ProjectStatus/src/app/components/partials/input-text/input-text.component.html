@@ -1,0 +1,10 @@
+<input [type]="type" [class]="className" [placeholder]="label" [formControl]="formControls"   />
+ 
+<div class="error-list" *ngIf="errorMessages && showErrorWhen">
+    <div *ngFor="let errorMessage of errorMessages">
+      {{errorMessage}}
+    </div>
+  </div>
+
+<!--   
+  <input-text className="form-control" [control]="$any(loginForm).controls['email']" [showErrorWhen]="true" type="text" label="email"></input-text> -->

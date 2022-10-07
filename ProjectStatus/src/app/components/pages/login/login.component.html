@@ -1,6 +1,5 @@
 <div class="container-fluid page-body-wrapper full-page-wrapper">
     <div class="content-wrapper d-flex align-items-center auth px-0">
-
         <div class="row w-100 mx-0">
             <div class="col-lg-4 mx-auto">
                 <div class="auth-form-light text-left py-5 px-4 px-sm-5">
@@ -9,15 +8,29 @@
                     </div>
                     <h4>{{SITE_NAME}}</h4>
                     <h6 class="font-weight-light">{{title}} in to continue.</h6>
-                    <form class="pt-3">
-                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Username">
+
+                    <form class="pt-3" [formGroup]="loginForm" (ngSubmit)="loginFormSubmit()">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="email" formControlName="email"
+                                required />
+
+                            <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)" class="alert">
+
+                                <div *ngIf="loginForm.get('email')?.errors?.['required']">
+                                    Name is required.
+                                </div>
+                                <div *ngIf="loginForm.get('email')?.errors?.['minlength']">
+                                    Name must be at least 4 characters long.
+                                </div> 
+
+                            </div>
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Password">
+                            <input type="password" class="form-control" placeholder="Password"
+                                formControlName="password" required>
                         </div>
                         <div class="form-group mt-3">
-                            <button type="button" class="btn btn-primary btn-block">Primary</button> 
+                            <button type="submit" class="btn btn-primary btn-block">Login</button>
                         </div>
                         <!-- <div class="my-2 d-flex justify-content-between align-items-center">
                             <div class="form-check">
@@ -43,3 +56,17 @@
 
     </div>
 </div>
+
+<!-- <input type="text" class="form-control" placeholder="email" formControlName="email" />
+                            <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)"
+                                class="alert">
+                                <div *ngIf="loginForm.get('email')?.errors?.['required']">
+                                    Name is required.
+                                  </div>
+                                  <div *ngIf="loginForm.get('email')?.errors?.['minlength']">
+                                    Name must be at least 4 characters long.
+                                  </div>
+                                  <div *ngIf="loginForm.get('email')?.errors?.['forbiddenName']">
+                                    Name cannot be Bob.
+                                  </div>
+                            </div> -->

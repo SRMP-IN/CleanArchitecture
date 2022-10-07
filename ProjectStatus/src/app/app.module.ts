@@ -8,6 +8,8 @@ import { SidebarComponent } from './components/partials/sidebar/sidebar.componen
 import { FooterComponent } from './components/partials/footer/footer.component'; 
 import { HomeComponent } from './components/pages/home/home.component';
 import { LoginComponent } from './components/pages/login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { InputTextComponent } from './components/partials/input-text/input-text.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { LoginComponent } from './components/pages/login/login.component';
     SidebarComponent,
     FooterComponent ,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    InputTextComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

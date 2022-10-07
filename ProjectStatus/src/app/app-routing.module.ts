@@ -4,8 +4,8 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { LoginComponent } from './components/pages/login/login.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
+  { path: 'Home', component: HomeComponent },
+  { path: '', component: LoginComponent, pathMatch:"full" },
   // { path: 'search/:searchTerm', component: HomeComponent },
   // { path: 'tag/:tag', component: HomeComponent },
   // {path:'food/:id', component:FoodPageComponent},

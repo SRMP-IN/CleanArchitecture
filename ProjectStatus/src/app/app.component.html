@@ -1,11 +1,7 @@
 <div class="container-scroller">
-
-
   <ng-template [ngIf]="fullPage">
     <router-outlet class="ng-component"></router-outlet>
   </ng-template>
-
-
   <ng-template [ngIf]="!fullPage">
     <app-navbar class="ng-component"></app-navbar>
     <div class="container-fluid page-body-wrapper">
@@ -17,9 +13,5 @@
       </div>
     </div>
   </ng-template>
-
-
-
-
-
+  <app-toaster></app-toaster>
 </div>

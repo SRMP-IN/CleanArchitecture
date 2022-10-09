@@ -1,0 +1,4 @@
+<div class="toast-container top-50 end-0 translate-middle-y">
+  <app-toast *ngFor="let toast of currentToasts; index as i" [type]="toast.type" [title]="toast.title"
+    [message]="toast.message" [time]="toast.time" (disposeEvent)="dispose(i)"></app-toast>
+</div>

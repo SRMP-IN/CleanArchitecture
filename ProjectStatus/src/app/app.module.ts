@@ -10,6 +10,9 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { LoginComponent } from './components/pages/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { InputTextComponent } from './components/partials/input-text/input-text.component';
+import { ToasterComponent } from './components/partials/toaster/toaster.component';
+import { ToastComponent } from './components/partials/toast/toast.component';
+import { TimeLaps } from './utilities/constants/Pipes/time-laps';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { InputTextComponent } from './components/partials/input-text/input-text.
     FooterComponent ,
     HomeComponent,
     LoginComponent,
-    InputTextComponent
+    InputTextComponent,
+    ToasterComponent,
+    ToastComponent,
+    TimeLaps
   ],
   imports: [
     BrowserModule,

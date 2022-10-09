@@ -1,0 +1,12 @@
+<div [class]="toast" role="alert" aria-live="polite" aria-atomic="true" data-autohide="false" data-delay="10000">
+  <div class="toast-header">
+    
+    <strong class="me-auto">{{title}}</strong>
+    <!-- <small class="text-muted">{{time|timeLaps}}</small> -->
+    <small class="text-muted">{{time|date:'Short'}}</small>
+    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+  <div class="toast-body">
+    {{message}}
+  </div>
+</div>

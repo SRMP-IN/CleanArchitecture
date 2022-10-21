@@ -8,53 +8,36 @@
                     </div>
                     <h4>{{SITE_NAME}}</h4>
                     <h6 class="font-weight-light">{{title}} in to continue.</h6>
-
-                    
-                    
-                    <!-- <div class="toast-container top-50 end-0 translate-middle-y" style="z-index: 50" >
-                      <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
-                        <div class="toast-header">
-                            
-                          <strong class="mr-auto">Bootstrap</strong>
-                          <small>11 mins ago</small>
-                          <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="toast-body">
-                          Hello, world! This is a toast message.
-                        </div>
-                      </div>
-                    </div>
- -->
-
-       
-
- <div class="card-container">
-    <button class="btn btn-info" (click)="showToast(EventTypes.Success)">Success</button>
-    <button class="btn btn-info" (click)="showToast(EventTypes.Info)">Info</button>
-    <button class="btn btn-info" (click)="showToast(EventTypes.Warning)">Warning</button>
-    <button class="btn btn-info" (click)="showToast(EventTypes.Error)">Error</button>
-</div>
                     <form class="pt-3" [formGroup]="loginForm" (ngSubmit)="loginFormSubmit()">
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="email" formControlName="email"
                                 required />
 
-                            <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)" class="alert">
+
+                            <div class="text-danger" *ngIf="loginForm.get('email')?.invalid 
+                                && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)">
 
                                 <div *ngIf="loginForm.get('email')?.errors?.['required']">
-                                    Name is required.
+                                    email is required.
                                 </div>
                                 <div *ngIf="loginForm.get('email')?.errors?.['minlength']">
-                                    Name must be at least 4 characters long.
-                                </div> 
-
+                                    email is required.
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <input type="password" class="form-control" placeholder="Password"
                                 formControlName="password" required>
+                            <div class="text-danger" *ngIf="loginForm.get('password')?.invalid 
+                            && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">
+
+                                <div *ngIf="loginForm.get('password')?.errors?.['required']">
+                                    password is required.
+                                </div>
+                                <div *ngIf="loginForm.get('email')?.errors?.['minlength']">
+                                    password is required.
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group mt-3">
                             <button type="submit" class="btn btn-primary btn-block">Login</button>

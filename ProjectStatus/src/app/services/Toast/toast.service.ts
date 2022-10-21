@@ -85,3 +85,11 @@ export class ToastService {
 
 
 }
+
+//this.toastService.nextToast('Success toast title', 'This is a success toast message.', time,type);
+// <div class="card-container">
+//     <button class="btn btn-info" (click)="showToast(EventTypes.Success)">Success</button>
+//     <button class="btn btn-info" (click)="showToast(EventTypes.Info)">Info</button>
+//     <button class="btn btn-info" (click)="showToast(EventTypes.Warning)">Warning</button>
+//     <button class="btn btn-info" (click)="showToast(EventTypes.Error)">Error</button>
+// </div>

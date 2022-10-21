@@ -1,7 +1,7 @@
 export enum EventTypes {
-    Success = 'bg-success',
-    Info = 'bg-info',
-    Warning = 'bg-warning',
-    Error = 'bg-danger',
+    Success = 'text-bg-success',
+    Info = 'text-bg-info',
+    Warning = 'text-bg-warning',
+    Error = 'text-bg-danger',
   }
   

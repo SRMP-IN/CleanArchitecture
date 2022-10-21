@@ -33,8 +33,11 @@ export class ToastComponent implements OnInit {
 
   show() {
     this.toast = 'toast fade show ' + this.type;
-
-    // this.toast = new Toast(
+    setTimeout(function(){
+      document.getElementsByClassName('toast')[0].classList.remove('show');
+      document.getElementsByClassName('toast')[0].remove();
+    },3000);
+  // this.toast = new Toast(
     //   this.toastEl.nativeElement,
     //   this.type === EventTypes.Error
     //     ? {

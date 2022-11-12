@@ -6,6 +6,8 @@ import { useAuthContext } from '../context/AuthContext'
 import PushAlert from '../layouts/PushAlert';
 import formatTitle from '../utilities/formatTitle';
 
+import { Button } from "react-bootstrap";
+
 function Login() {
 
   // console.log(Login.name);
@@ -64,8 +66,8 @@ function Login() {
                 <div className="form-group">
                   <input ref={password} required type="Password" placeholder="Password" className="form-control form-control-lg"></input>
                 </div>
-                <div className="mt-3">
-                  <button type='submit' className="btn btn-primary btn-lg auth-form-btn">SIGN IN</button>
+                <div className="mt-3"> 
+                  <Button type='submit' className="btn btn-primary btn-lg auth-form-btn">SIGN IN</Button>
                 </div>
                 {/* <div className="my-2 d-flex justify-content-between align-items-center">
                   <div className="form-check">

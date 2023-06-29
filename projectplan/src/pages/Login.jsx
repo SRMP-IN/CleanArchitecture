@@ -7,6 +7,7 @@ import PushAlert from '../layouts/PushAlert';
 import formatTitle from '../utilities/formatTitle';
 
 import { Button } from "react-bootstrap";
+import ToastAlert from '../components/ToastAlert/ToastAlert';
 
 function Login() {
 
@@ -69,6 +70,8 @@ function Login() {
                 <div className="mt-3"> 
                   <Button type='submit' className="btn btn-primary btn-lg auth-form-btn">SIGN IN</Button>
                 </div>
+
+                <ToastAlert></ToastAlert>
                 {/* <div className="my-2 d-flex justify-content-between align-items-center">
                   <div className="form-check">
                     <label className="form-check-label text-muted">
